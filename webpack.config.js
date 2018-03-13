@@ -1,5 +1,6 @@
 const path = require('path')
 module.exports = {
+  mode: 'development',
   entry: {
     components: './components.js',
     pageLayouts: './page-layout.js'
@@ -19,6 +20,8 @@ module.exports = {
 				},
       }
     },
-  }
+    runtimeChunk: true
+  },
+
 
 }
