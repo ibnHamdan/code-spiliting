@@ -1,41 +1,3 @@
-<<<<<<< HEAD
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pageLayouts"],{
-
-/***/ "./page-layout.js":
-/*!************************!*\
-  !*** ./page-layout.js ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const p1 = __webpack_require__(/*! ./src/page-layouts/p1 */ \"./src/page-layouts/p1.js\");\nconst p2 = __webpack_require__(/*! ./src/page-layouts/p2 */ \"./src/page-layouts/p2.js\");\n\n\n//# sourceURL=webpack:///./page-layout.js?");
-
-/***/ }),
-
-/***/ "./src/page-layouts/p1.js":
-/*!********************************!*\
-  !*** ./src/page-layouts/p1.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const add = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.js\");\nconst sub = __webpack_require__(/*! ../modules/sub */ \"./src/modules/sub.js\");\n\n\nconsole.log(add(102,465), sub(10,10))\n\n//# sourceURL=webpack:///./src/page-layouts/p1.js?");
-
-/***/ }),
-
-/***/ "./src/page-layouts/p2.js":
-/*!********************************!*\
-  !*** ./src/page-layouts/p2.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const add = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.js\");\nconst multi = __webpack_require__(/*! ../modules/multi */ \"./src/modules/multi.js\");\n\nconsole.log(add(4695,465), multi(102,465))\n\n//# sourceURL=webpack:///./src/page-layouts/p2.js?");
-
-/***/ })
-
-},[["./page-layout.js","runtime~pageLayouts","commons~components~pageLayouts"]]]);
-=======
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -104,61 +66,75 @@ eval("const add = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./page-layout.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
+/******/ ({
 
-module.exports = function(num1, num2) {
-  return num1 + num2;
-}
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = function(num1, num2) {
-  return (num1*num2);
-}
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = function(num1, num2) {
-  return num1 - num2;
-}
-
-/***/ }),
-/* 3 */,
-/* 4 */
+/***/ "./page-layout.js":
+/*!************************!*\
+  !*** ./page-layout.js ***!
+  \************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-const add = __webpack_require__(0);
-const multi = __webpack_require__(1);
-
-console.log(add(4695,465), multi(102,465))
+eval("const p1 = __webpack_require__(/*! ./src/page-layouts/p1 */ \"./src/page-layouts/p1.js\");\r\nconst p2 = __webpack_require__(/*! ./src/page-layouts/p2 */ \"./src/page-layouts/p2.js\");\r\n\n\n//# sourceURL=webpack:///./page-layout.js?");
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
 
-const add = __webpack_require__(0);
-const sub = __webpack_require__(2);
+/***/ "./src/modules/add.js":
+/*!****************************!*\
+  !*** ./src/modules/add.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-
-console.log(add(102,465), sub(10,10))
+eval("module.exports = function(num1, num2) {\r\n  return num1 + num2;\r\n}\n\n//# sourceURL=webpack:///./src/modules/add.js?");
 
 /***/ }),
-/* 6 */
+
+/***/ "./src/modules/multi.js":
+/*!******************************!*\
+  !*** ./src/modules/multi.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(num1, num2) {\r\n  return (num1*num2);\r\n}\n\n//# sourceURL=webpack:///./src/modules/multi.js?");
+
+/***/ }),
+
+/***/ "./src/modules/sub.js":
+/*!****************************!*\
+  !*** ./src/modules/sub.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(num1, num2) {\r\n  return num1 - num2;\r\n}\n\n//# sourceURL=webpack:///./src/modules/sub.js?");
+
+/***/ }),
+
+/***/ "./src/page-layouts/p1.js":
+/*!********************************!*\
+  !*** ./src/page-layouts/p1.js ***!
+  \********************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-const p1 = __webpack_require__(5);
-const p2 = __webpack_require__(4);
+eval("const add = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.js\");\r\nconst sub = __webpack_require__(/*! ../modules/sub */ \"./src/modules/sub.js\");\r\n\r\n\r\nconsole.log(add(102,465), sub(10,10))\n\n//# sourceURL=webpack:///./src/page-layouts/p1.js?");
 
+/***/ }),
+
+/***/ "./src/page-layouts/p2.js":
+/*!********************************!*\
+  !*** ./src/page-layouts/p2.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const add = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.js\");\r\nconst multi = __webpack_require__(/*! ../modules/multi */ \"./src/modules/multi.js\");\r\n\r\nconsole.log(add(4695,465), multi(102,465))\n\n//# sourceURL=webpack:///./src/page-layouts/p2.js?");
 
 /***/ })
-/******/ ]);
->>>>>>> ec7548ce9a6170fc5b6dfd032985f62f64449e50
+
+/******/ });
