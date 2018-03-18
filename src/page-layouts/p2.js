@@ -1,4 +1,4 @@
-const add = require('../modules/add');
-const multi = require('../modules/multi');
+import add from '../modules/add';
+import multi from '../modules/multi';
 
-console.log(add(4695,465), multi(102,465))
+console.log("p2: "+ add(40,10), multi(10,10))

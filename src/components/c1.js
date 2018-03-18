@@ -1,6 +1,12 @@
-const add = require('../modules/add');
-const operations = require('../modules/operations')
+import add from '../modules/add';
+import multi from '../modules/multi';
+import sub from '../modules/sub';
 
-console.log(add(10,87))
+const c11 = 30;
+//const {operations} = require('../modules/operations')
 
-console.log(operations.default(12,12))
+function c1() {
+  console.log("c1 :" + add(11,11) + " multi: " + multi(11, 11)+ " sub: " + sub(11, 11)
+)
+}
+export {c1, c11}
