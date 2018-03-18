@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 module.exports = {
   mode: 'development',
   entry: {
@@ -13,14 +14,18 @@ module.exports = {
     splitChunks: {
       cacheGroups: {
         commons: {
-          // chunks: "all",
-          // name: "common",
-					 minSize: 0
-        },
-
+          chunks: "initial",
+          minSize: 0
+        }
       }
+      // chunks: 'all',
+      // minSize: 0,
     },
-    occurrenceOrder: true,
-
-  }
+  },
+  plugins: [
+    new webpack.optimize.AggressiveMergingPlugin({
+      minSizeReduce: 1,
+      moveToParents: true,
+    }),
+  ]
 }
