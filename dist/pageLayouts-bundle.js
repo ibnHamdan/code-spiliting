@@ -1,6 +1,61 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1]
+/******/ 		var executeModules = data[2];
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fullfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fullfilled = false;
+/******/ 			}
+/******/ 			if(fullfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/ 		return result;
+/******/ 	}
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	var installedChunks = {
+/******/ 		"pageLayouts": 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -64,77 +119,18 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./page-layout.js");
+/******/
+/******/ 	// add entry module to deferred list
+/******/ 	deferredModules.push(["./page-layout.js","commons~components~pageLayouts","commons~pageLayouts"]);
+/******/ 	// run deferred modules when ready
+/******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ "./page-layout.js":
-/*!************************!*\
-  !*** ./page-layout.js ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const p1 = __webpack_require__(/*! ./src/page-layouts/p1 */ \"./src/page-layouts/p1.js\");\r\nconst p2 = __webpack_require__(/*! ./src/page-layouts/p2 */ \"./src/page-layouts/p2.js\");\r\n\n\n//# sourceURL=webpack:///./page-layout.js?");
-
-/***/ }),
-
-/***/ "./src/modules/add.js":
-/*!****************************!*\
-  !*** ./src/modules/add.js ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = function(num1, num2) {\r\n  return num1 + num2;\r\n}\n\n//# sourceURL=webpack:///./src/modules/add.js?");
-
-/***/ }),
-
-/***/ "./src/modules/multi.js":
-/*!******************************!*\
-  !*** ./src/modules/multi.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = function(num1, num2) {\r\n  return (num1*num2);\r\n}\n\n//# sourceURL=webpack:///./src/modules/multi.js?");
-
-/***/ }),
-
-/***/ "./src/modules/sub.js":
-/*!****************************!*\
-  !*** ./src/modules/sub.js ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = function(num1, num2) {\r\n  return num1 - num2;\r\n}\n\n//# sourceURL=webpack:///./src/modules/sub.js?");
-
-/***/ }),
-
-/***/ "./src/page-layouts/p1.js":
-/*!********************************!*\
-  !*** ./src/page-layouts/p1.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const add = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.js\");\r\nconst sub = __webpack_require__(/*! ../modules/sub */ \"./src/modules/sub.js\");\r\n\r\n\r\nconsole.log(add(102,465), sub(10,10))\n\n//# sourceURL=webpack:///./src/page-layouts/p1.js?");
-
-/***/ }),
-
-/***/ "./src/page-layouts/p2.js":
-/*!********************************!*\
-  !*** ./src/page-layouts/p2.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const add = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.js\");\r\nconst multi = __webpack_require__(/*! ../modules/multi */ \"./src/modules/multi.js\");\r\n\r\nconsole.log(add(4695,465), multi(102,465))\n\n//# sourceURL=webpack:///./src/page-layouts/p2.js?");
-
-/***/ })
-
-/******/ });
+/******/ ([]);

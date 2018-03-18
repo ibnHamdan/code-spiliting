@@ -1,2 +1,2 @@
-const p1 = require('./src/page-layouts/p1');
-const p2 = require('./src/page-layouts/p2');
+import p1 from './src/page-layouts/p1';
+import p2 from './src/page-layouts/p2';
