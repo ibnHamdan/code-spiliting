@@ -1,61 +1,6 @@
 /******/ (function(modules) { // webpackBootstrap
-/******/ 	// install a JSONP callback for chunk loading
-/******/ 	function webpackJsonpCallback(data) {
-/******/ 		var chunkIds = data[0];
-/******/ 		var moreModules = data[1]
-/******/ 		var executeModules = data[2];
-/******/ 		// add "moreModules" to the modules object,
-/******/ 		// then flag all "chunkIds" as loaded and fire callback
-/******/ 		var moduleId, chunkId, i = 0, resolves = [];
-/******/ 		for(;i < chunkIds.length; i++) {
-/******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
-/******/ 				resolves.push(installedChunks[chunkId][0]);
-/******/ 			}
-/******/ 			installedChunks[chunkId] = 0;
-/******/ 		}
-/******/ 		for(moduleId in moreModules) {
-/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
-/******/ 				modules[moduleId] = moreModules[moduleId];
-/******/ 			}
-/******/ 		}
-/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
-/******/ 		while(resolves.length) {
-/******/ 			resolves.shift()();
-/******/ 		}
-/******/
-/******/ 		// add entry modules from loaded chunk to deferred list
-/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
-/******/
-/******/ 		// run deferred modules when all chunks ready
-/******/ 		return checkDeferredModules();
-/******/ 	};
-/******/ 	function checkDeferredModules() {
-/******/ 		var result;
-/******/ 		for(var i = 0; i < deferredModules.length; i++) {
-/******/ 			var deferredModule = deferredModules[i];
-/******/ 			var fullfilled = true;
-/******/ 			for(var j = 1; j < deferredModule.length; j++) {
-/******/ 				var depId = deferredModule[j];
-/******/ 				if(installedChunks[depId] !== 0) fullfilled = false;
-/******/ 			}
-/******/ 			if(fullfilled) {
-/******/ 				deferredModules.splice(i--, 1);
-/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
-/******/ 			}
-/******/ 		}
-/******/ 		return result;
-/******/ 	}
-/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
-/******/ 	// object to store loaded and loading chunks
-/******/ 	var installedChunks = {
-/******/ 		"components": 0
-/******/ 	};
-/******/
-/******/ 	var deferredModules = [];
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -119,18 +64,104 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
-/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
-/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
-/******/ 	jsonpArray.push = webpackJsonpCallback;
-/******/ 	jsonpArray = jsonpArray.slice();
-/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
-/******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
-/******/
-/******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./components.js","commons~components~pageLayouts","commons~components"]);
-/******/ 	// run deferred modules when ready
-/******/ 	return checkDeferredModules();
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./components.js");
 /******/ })
 /************************************************************************/
-/******/ ([]);
+/******/ ({
+
+/***/ "./components.js":
+/*!***********************!*\
+  !*** ./components.js ***!
+  \***********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_components_c1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/components/c1 */ \"./src/components/c1.js\");\n/* harmony import */ var _src_components_c2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/components/c2 */ \"./src/components/c2.js\");\n/* harmony import */ var _src_components_c3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/components/c3 */ \"./src/components/c3.js\");\n\r\n\r\n\r\n\r\nObject(_src_components_c1__WEBPACK_IMPORTED_MODULE_0__[\"c1\"])()\r\nObject(_src_components_c2__WEBPACK_IMPORTED_MODULE_1__[\"c2\"])()\r\nObject(_src_components_c3__WEBPACK_IMPORTED_MODULE_2__[\"c3\"])()\n\n//# sourceURL=webpack:///./components.js?");
+
+/***/ }),
+
+/***/ "./src/components/c1.js":
+/*!******************************!*\
+  !*** ./src/components/c1.js ***!
+  \******************************/
+/*! exports provided: c1, c11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"c1\", function() { return c1; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"c11\", function() { return c11; });\n/* harmony import */ var _modules_add__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.js\");\n/* harmony import */ var _modules_add__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_add__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _modules_multi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/multi */ \"./src/modules/multi.js\");\n/* harmony import */ var _modules_multi__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_multi__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _modules_sub__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/sub */ \"./src/modules/sub.js\");\n/* harmony import */ var _modules_sub__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_sub__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\nconst c11 = 30;\r\n//const {operations} = require('../modules/operations')\r\n\r\nfunction c1() {\r\n  console.log(\"c1 :\" + _modules_add__WEBPACK_IMPORTED_MODULE_0___default()(11,11) + \" multi: \" + _modules_multi__WEBPACK_IMPORTED_MODULE_1___default()(11, 11)+ \" sub: \" + _modules_sub__WEBPACK_IMPORTED_MODULE_2___default()(11, 11)\r\n)\r\n}\r\n\n\n//# sourceURL=webpack:///./src/components/c1.js?");
+
+/***/ }),
+
+/***/ "./src/components/c2.js":
+/*!******************************!*\
+  !*** ./src/components/c2.js ***!
+  \******************************/
+/*! exports provided: c2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"c2\", function() { return c2; });\n/* harmony import */ var _modules_add__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.js\");\n/* harmony import */ var _modules_add__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_add__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _modules_sub__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/sub */ \"./src/modules/sub.js\");\n/* harmony import */ var _modules_sub__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_sub__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nfunction c2() {\r\n  console.log(\"c2 :\" + _modules_add__WEBPACK_IMPORTED_MODULE_0___default()(102,465), _modules_sub__WEBPACK_IMPORTED_MODULE_1___default()(10,10))\r\n}\r\n\r\n\n\n//# sourceURL=webpack:///./src/components/c2.js?");
+
+/***/ }),
+
+/***/ "./src/components/c3.js":
+/*!******************************!*\
+  !*** ./src/components/c3.js ***!
+  \******************************/
+/*! exports provided: c3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"c3\", function() { return c3; });\n/* harmony import */ var _modules_add__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/add */ \"./src/modules/add.js\");\n/* harmony import */ var _modules_add__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_add__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _modules_multi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/multi */ \"./src/modules/multi.js\");\n/* harmony import */ var _modules_multi__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_multi__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _modules_divid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/divid */ \"./src/modules/divid.js\");\n\r\n\r\n\r\n\r\nfunction c3(){\r\n  console.log(\"c3: \" + _modules_add__WEBPACK_IMPORTED_MODULE_0___default()(123,89), _modules_multi__WEBPACK_IMPORTED_MODULE_1___default()(102,465), Object(_modules_divid__WEBPACK_IMPORTED_MODULE_2__[\"divid\"])(10,10));\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/components/c3.js?");
+
+/***/ }),
+
+/***/ "./src/modules/add.js":
+/*!****************************!*\
+  !*** ./src/modules/add.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(num1, num2) {\r\n  return num1 + num2;\r\n}\n\n//# sourceURL=webpack:///./src/modules/add.js?");
+
+/***/ }),
+
+/***/ "./src/modules/divid.js":
+/*!******************************!*\
+  !*** ./src/modules/divid.js ***!
+  \******************************/
+/*! exports provided: divid, bake */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"divid\", function() { return divid; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"bake\", function() { return bake; });\nconst divid = function(num1, num2) {\r\n  return (num1/num2);\r\n}\r\nconst bake = () => console.log('bake');\r\n\r\n\n\n//# sourceURL=webpack:///./src/modules/divid.js?");
+
+/***/ }),
+
+/***/ "./src/modules/multi.js":
+/*!******************************!*\
+  !*** ./src/modules/multi.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(num1, num2) {\r\n  return (num1*num2);\r\n}\n\n//# sourceURL=webpack:///./src/modules/multi.js?");
+
+/***/ }),
+
+/***/ "./src/modules/sub.js":
+/*!****************************!*\
+  !*** ./src/modules/sub.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(num1, num2) {\r\n  return num1 - num2;\r\n}\n\n//# sourceURL=webpack:///./src/modules/sub.js?");
+
+/***/ })
+
+/******/ });
