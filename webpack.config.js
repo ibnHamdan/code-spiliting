@@ -12,14 +12,19 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      // cacheGroups: {
-      //   commons: {
-      //     chunks: "initial",
-      //     minSize: 0
-      //   }
-      // }
-       //chunks: 'all',
-       minSize: 0,
+      cacheGroups: {
+        commons: {
+          chunks: "initial",
+          minSize: 0,
+        },
+        vendors: {
+          chunks: 'all',
+          name: 'vendor'
+
+        }
+      }
+      //  chunks: 'initial',
+      //  minSize: 0,
     },
   },
 
