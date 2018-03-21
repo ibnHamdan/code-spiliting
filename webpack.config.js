@@ -9,22 +9,23 @@ module.exports = {
   output: {
     filename: '[name]-bundle.js',
     path: path.resolve(__dirname, './dist'),
+    //chunkFilename: '[name].bundle.js',
   },
   optimization: {
     splitChunks: {
       cacheGroups: {
-        commons: {
-          chunks: "initial",
-          minSize: 0,
+        utilities: {
+          minChunks: 3,
+          name: "utilities",
+          maxInitialRequests: 12,
         },
-        vendors: {
-          chunks: 'all',
-          name: 'vendor'
-
-        }
-      }
-      //  chunks: 'initial',
-      //  minSize: 0,
+        sharedVendors: {
+          minChunks: 3,
+          name:"modules",
+        },
+      },
+         chunks: 'all',
+         minSize: 0,
     },
   },
 
