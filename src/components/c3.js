@@ -1,5 +1,5 @@
-import add from '../modules/add';
-import multi from '../modules/multi';
+import {add} from '../modules/add';
+import {multi} from '../modules/multi';
 import { divid } from '../modules/divid';
 
 function c3(){

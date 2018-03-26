@@ -1,6 +1,6 @@
-import add from '../modules/add';
-import sub from '../modules/sub';
-import { Component } from 'preact';
+import {add} from '../modules/add';
+import {sub} from '../modules/sub';
+//import { Component } from 'preact';
 
 
 function c2() {

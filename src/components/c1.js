@@ -1,6 +1,6 @@
-import add from '../modules/add';
-import multi from '../modules/multi';
-import sub from '../modules/sub';
+import {add} from '../modules/add';
+import {multi} from '../modules/multi';
+import {sub} from '../modules/sub';
 
 const c11 = 30;
 //const {operations} = require('../modules/operations')
